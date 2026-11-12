@@ -85,15 +85,12 @@ img {
 
 @media screen and (min-width: 992px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
     
-    .grid figure:nth-child(3) {
-        grid-column: span 2;
-    }
-
-    .grid figure img {
-        border-radius: 0; 
+    
+    .grid figure {
+        grid-column: auto !important;
     }
 }
 
