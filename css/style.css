@@ -23,7 +23,7 @@ p {
     padding: 0 20px;
 }
 
-/* Lưới mặc định 1 cột (Mobile) */
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -33,7 +33,7 @@ p {
     margin: 0 auto;
 }
 
-/* Khung thẻ chứa từng con mèo */
+
 .grid figure {
     background-color: #1e1e1e;
     border: 2px solid #333;
@@ -46,12 +46,12 @@ p {
     justify-content: space-between;
 }
 
-/* Ép khung ảnh thành hình vuông đều tăm tắp và hiện FULL con mèo */
+
 .grid figure img {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Tạo khung vuông vức để ảnh đứng hay ngang đều vừa đẹp */
-    object-fit: contain; /* Đảm bảo hiện 100% nguyên con mèo, tuyệt đối không cắt xén */
-    background-color: #121212; /* Nền tối tiệp với khung cho những ảnh không vuông */
+    aspect-ratio: 1 / 1; 
+    object-fit: contain; 
+    background-color: #121212; 
     border-radius: 6px;
     display: block;
 }
@@ -64,14 +64,14 @@ p {
     font-size: 18px;
 }
 
-/* Màn hình Tablet (từ 772px trở lên): 2 cột */
+
 @media screen and (min-width: 772px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .grid figure img {
-        border-radius: 50%; /* Yêu cầu của đề bài ở mốc 772px */
+        border-radius: 50%;
     }
 
     .grid figure:last-child {
@@ -79,22 +79,22 @@ p {
     }
 }
 
-/* Màn hình PC / Desktop (từ 992px trở lên): 3 cột đều nhau */
+
 @media screen and (min-width: 992px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
     .grid figure:last-child {
-        grid-column: auto; /* Trả lại 1 cột bình thường cho ảnh cuối */
+        grid-column: auto; 
     }
 
     .grid figure img {
-        border-radius: 6px; /* Trả lại góc bo nhẹ vuông vức, hết bị bầu dục */
+        border-radius: 6px; 
     }
 }
 
-/* Giảm chuyển động */
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -105,7 +105,7 @@ p {
     }
 }
 
-/* Chế độ tối (Dark Mode) */
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
