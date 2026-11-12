@@ -4,68 +4,87 @@ body {
 
 h1 {
     text-align: center;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 32px;
 }
 
 a {
     color: #000;
     text-decoration: none;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-img{
-  width:100%;
-}
-
-
-p{
-  text-align:center;
+img {
+    width: 100%;
 }
 
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+    padding: 20px;
+}
+
+.grid figure {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+.grid figure img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: contain; 
+    background-color: #000; 
+    border-radius: 6px;
+}
+
+.grid figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #ffeb3b;
 }
 
 
 @media screen and (min-width: 772px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* Lưới 2 cột */
+        grid-template-columns: repeat(2, 1fr); 
     }
-    
     
     .grid figure img {
-        border-radius: 50%;
+        border-radius: 50%; 
     }
 
-    
     .grid figure:last-child {
-        grid-column: span 2;
+        grid-column: span 2; /
     }
 }
 
 
 @media screen and (min-width: 992px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr); /* Tùy chỉnh hiển thị rộng hơn */
+        grid-template-columns: repeat(3, 1fr); 
     }
-
-   
+    
     .grid figure:nth-child(3) {
         grid-column: span 2;
     }
 
-   
     .grid figure img {
-        border-radius: 0;
+        border-radius: 0; 
     }
 }
 
@@ -87,10 +106,9 @@ p{
         color: #e0e0e0;
     }
 
-  
     .grid figure {
         background-color: #1e1e1e;
-        border: 2px solid #000000;
+        border: 2px solid #000000; 
         color: #ffeb3b; 
     }
 }
