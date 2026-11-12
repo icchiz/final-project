@@ -56,8 +56,9 @@ img {
 
 .grid figure img {
     width: 100% !important;
-    height: 180px !important;
+    height: 220px !important; 
     object-fit: cover !important;
+    object-position: top !important; 
     border-radius: 6px;
 }
 .grid figcaption {
