@@ -1,5 +1,7 @@
 body {
     background-color: #dedede;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -15,90 +17,87 @@ a {
 }
 
 p {
-    font-size: 25px;
+    font-size: 20px;
     font-family: Arial, sans-serif;
     text-align: center;
+    padding: 0 20px;
 }
 
-img {
-    width: 100%;
-}
-
-
-
-
+/* Lưới mặc định 1 cột (Mobile) */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: 1fr;
     gap: 15px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
+/* Khung thẻ chứa từng con mèo */
 .grid figure {
     background-color: #1e1e1e;
-    border: 1px solid #333;
+    border: 2px solid #333;
     border-radius: 8px;
-    padding: 10px;
-    text-align: center;
+    padding: 12px;
     margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
-.grid figure:last-child,
-.grid figure:nth-child(3) {
-    grid-column: auto !important;
-}
-
-
+/* Ép khung ảnh thành hình vuông đều tăm tắp và hiện FULL con mèo */
 .grid figure img {
-    width: 100% !important;
-    height: 220px !important; 
-    object-fit: cover !important;
-    object-position: top !important; 
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Tạo khung vuông vức để ảnh đứng hay ngang đều vừa đẹp */
+    object-fit: contain; /* Đảm bảo hiện 100% nguyên con mèo, tuyệt đối không cắt xén */
+    background-color: #121212; /* Nền tối tiệp với khung cho những ảnh không vuông */
     border-radius: 6px;
+    display: block;
 }
+
 .grid figcaption {
-    margin-top: 8px;
+    margin-top: 10px;
     font-weight: bold;
     font-family: Arial, sans-serif;
     color: #ffeb3b;
+    font-size: 18px;
 }
 
-
+/* Màn hình Tablet (từ 772px trở lên): 2 cột */
 @media screen and (min-width: 772px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .grid figure img {
-        border-radius: 50%; 
+        border-radius: 50%; /* Yêu cầu của đề bài ở mốc 772px */
     }
 
     .grid figure:last-child {
-        grid-column: span 2; /
+        grid-column: span 2;
     }
 }
 
-
+/* Màn hình PC / Desktop (từ 992px trở lên): 3 cột đều nhau */
 @media screen and (min-width: 992px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    
-    .grid figure {
-        grid-column: auto !important;
+    .grid figure:last-child {
+        grid-column: auto; /* Trả lại 1 cột bình thường cho ảnh cuối */
+    }
+
+    .grid figure img {
+        border-radius: 6px; /* Trả lại góc bo nhẹ vuông vức, hết bị bầu dục */
     }
 }
 
-
+/* Giảm chuyển động */
 @media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: auto; 
+        scroll-behavior: auto;
     }
     * {
         animation: none !important;
@@ -106,17 +105,21 @@ img {
     }
 }
 
-
+/* Chế độ tối (Dark Mode) */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
         color: #e0e0e0;
     }
 
+    a {
+        color: #ffeb3b;
+    }
+
     .grid figure {
         background-color: #1e1e1e;
-        border: 2px solid #000000; 
-        color: #ffeb3b; 
+        border: 2px solid #000000;
+        color: #ffeb3b;
     }
 }
 
