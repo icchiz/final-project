@@ -28,11 +28,10 @@ img {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: 1fr; 
+    gap: 10px; 
     padding: 20px;
 }
-
 
 .grid figure {
     background-color: #1e1e1e;
@@ -49,6 +48,7 @@ img {
     width: 100% !important;
     height: 220px !important;
     object-fit: cover !important; 
+    background-color: transparent !important; 
     border-radius: 6px;
 }
 .grid figcaption {
